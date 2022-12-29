@@ -1,4 +1,5 @@
 import SelectionUtils from './SelectionUtils'
+import { IconLink, IconUnlink } from '@codexteam/icons';
 import css from './LinkWithTarget.css'
 
 export default class LinkWithTarget {
@@ -244,7 +245,7 @@ export default class LinkWithTarget {
     icon.classList.add('icon', 'icon--' + name)
     icon.setAttribute('width', width + 'px')
     icon.setAttribute('height', height + 'px')
-    icon.innerHTML = `<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#${name}"></use>`
+    icon.innerHTML = name === 'link' ? IconLink : IconUnlink
     return icon
   }
 }
